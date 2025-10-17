@@ -1,0 +1,170 @@
+<div class="certificate-form-container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title mb-0">
+        <i class="fas fa-edit me-2"></i>
+        Dados do Certificado
+      </h5>
+    </div>
+    <div class="card-body">
+      <form class="row g-3">
+        <!-- Nome do Aluno -->
+        <div class="col-md-6">
+          <label for="studentName" class="form-label">
+            <i class="fas fa-user me-1"></i>
+            Nome do Aluno *
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="studentName"
+            name="studentName"
+            [(ngModel)]="formData().studentName"
+            (input)="onInputChange()"
+            placeholder="Digite o nome completo do aluno"
+            required>
+        </div>
+
+        <!-- Curso -->
+        <div class="col-md-6">
+          <label for="courseName" class="form-label">
+            <i class="fas fa-graduation-cap me-1"></i>
+            Nome do Curso *
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="courseName"
+            name="courseName"
+            [(ngModel)]="formData().courseName"
+            (input)="onInputChange()"
+            list="coursesList"
+            placeholder="Digite o nome do curso"
+            required>
+          <datalist id="coursesList">
+            @for (course of courses; track course) {
+              <option [value]="course">
+            }
+          </datalist>
+        </div>
+
+        <!-- Instituição -->
+        <div class="col-md-6">
+          <label for="institution" class="form-label">
+            <i class="fas fa-building me-1"></i>
+            Instituição
+          </label>
+          <select
+            class="form-select"
+            id="institution"
+            name="institution"
+            [(ngModel)]="formData().institution"
+            (change)="onInputChange()">
+            @for (inst of institutions; track inst) {
+              <option [value]="inst">{{inst}}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Data de Conclusão -->
+        <div class="col-md-6">
+          <label for="completionDate" class="form-label">
+            <i class="fas fa-calendar me-1"></i>
+            Data de Conclusão
+          </label>
+          <input
+            type="date"
+            class="form-control"
+            id="completionDate"
+            name="completionDate"
+            [(ngModel)]="formData().completionDate"
+            (change)="onInputChange()">
+        </div>
+
+        <!-- Instrutor -->
+        <div class="col-md-6">
+          <label for="instructor" class="form-label">
+            <i class="fas fa-chalkboard-teacher me-1"></i>
+            Instrutor/Professor
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="instructor"
+            name="instructor"
+            [(ngModel)]="formData().instructor"
+            (input)="onInputChange()"
+            placeholder="Nome do instrutor">
+        </div>
+
+        <!-- Carga Horária -->
+        <div class="col-md-6">
+          <label for="courseHours" class="form-label">
+            <i class="fas fa-clock me-1"></i>
+            Carga Horária (horas)
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="courseHours"
+            name="courseHours"
+            [(ngModel)]="formData().courseHours"
+            (input)="onInputChange()"
+            min="1"
+            max="1000">
+        </div>
+
+        <!-- Número do Certificado -->
+        <div class="col-12">
+          <label for="certificateNumber" class="form-label">
+            <i class="fas fa-hashtag me-1"></i>
+            Número do Certificado
+          </label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="certificateNumber"
+              name="certificateNumber"
+              [(ngModel)]="formData().certificateNumber"
+              (input)="onInputChange()"
+              readonly>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="regenerateCertificateNumber()"
+              title="Gerar novo número">
+              <i class="fas fa-refresh"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="col-12">
+          <div class="d-flex gap-2 justify-content-end">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              (click)="clearForm()">
+              <i class="fas fa-eraser me-1"></i>
+              Limpar
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary">
+              <i class="fas fa-save me-1"></i>
+              Salvar Rascunho
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              [disabled]="!formData().studentName || !formData().courseName">
+              <i class="fas fa-certificate me-1"></i>
+              Gerar Preview
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
