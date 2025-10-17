@@ -28,32 +28,105 @@ ng generate --help
 
 ## Building
 
-To build the project run:
-
-```bash
-ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### 2. Instale as dependências
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### 3. Execute o projeto
 ```bash
-ng e2e
+# Desenvolvimento
+ng serve
+
+# ou com porta específica
+ng serve --port 4200
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 4. Acesse a aplicação
+Abra seu navegador em: `http://localhost:4200`
 
-## Additional Resources
+## 🏗️ Estrutura do Projeto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+src/
+├── app/
+│   ├── _components/
+│   │   ├── navbar/              # Barra de navegação
+│   │   ├── certificate-form/    # Formulário de certificados
+│   │   ├── certificate-preview/ # Preview em tempo real
+│   │   └── certificate-list/    # Lista de certificados
+│   ├── app.ts                   # Componente principal
+│   ├── app.html                 # Template principal
+│   └── app.css                  # Estilos principais
+├── styles.css                   # Estilos globais
+└── index.html                   # Página base
+```
+
+## 🎯 Como Usar
+
+### 1. **Criar Certificado**
+1. Preencha o formulário com os dados do aluno
+2. Selecione o curso e instituição
+3. Configure a carga horária
+4. Visualize o preview em tempo real
+5. Clique em "Gerar Certificado"
+
+### 2. **Gerenciar Certificados**
+1. Acesse a aba "Meus Certificados"
+2. Use a busca para encontrar certificados
+3. Ordene por data, nome ou curso
+4. Use as ações: visualizar, editar, duplicar, excluir
+
+### 3. **Personalização**
+- Modifique os estilos em `src/styles.css`
+- Adicione novos cursos em `certificate-form.ts`
+- Customize o template em `certificate-preview.html`
+
+## 🌐 Deploy
+
+### Produção
+```bash
+ng build --prod
+```
+
+### GitHub Pages
+```bash
+ng add angular-cli-ghpages
+ng deploy --base-href=/Gerador-de-Certificados-Angular/
+```
+
+## 🤝 Contribuição
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Douglas Vecchi**
+- GitHub: [@DougVec](https://github.com/DougVec)
+- LinkedIn: [Douglas Vecchi](https://linkedin.com/in/douglas-vecchi)
+
+## 🚀 Próximas Funcionalidades
+
+- [ ] Export para PDF
+- [ ] Templates de certificado personalizáveis
+- [ ] Sistema de autenticação
+- [ ] API backend para persistência
+- [ ] Assinatura digital
+- [ ] Envio por email
+- [ ] Dashboard de estatísticas
+
+---
+
+⭐ Se este projeto te ajudou, considere dar uma estrela!
+
+**Desenvolvido com ❤️ usando Angular 18**
