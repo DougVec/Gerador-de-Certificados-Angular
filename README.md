@@ -47,7 +47,7 @@ ng serve --port 4200
 ### 4. Acesse a aplicação
 Abra seu navegador em: `http://localhost:4200`
 
-## 🏗️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 src/
@@ -64,7 +64,7 @@ src/
 └── index.html                   # Página base
 ```
 
-## 🎯 Como Usar
+## Como Usar
 
 ### 1. **Criar Certificado**
 1. Preencha o formulário com os dados do aluno
@@ -84,7 +84,7 @@ src/
 - Adicione novos cursos em `certificate-form.ts`
 - Customize o template em `certificate-preview.html`
 
-## 🌐 Deploy
+## Deploy
 
 ### Produção
 ```bash
@@ -97,7 +97,7 @@ ng add angular-cli-ghpages
 ng deploy --base-href=/Gerador-de-Certificados-Angular/
 ```
 
-## 🤝 Contribuição
+## Contribuição
 
 1. Faça um Fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -105,28 +105,12 @@ ng deploy --base-href=/Gerador-de-Certificados-Angular/
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👨‍💻 Autor
+## Autor
 
 **Douglas Vecchi**
 - GitHub: [@DougVec](https://github.com/DougVec)
 - LinkedIn: [Douglas Vecchi](https://linkedin.com/in/douglas-vecchi)
-
-## 🚀 Próximas Funcionalidades
-
-- [ ] Export para PDF
-- [ ] Templates de certificado personalizáveis
-- [ ] Sistema de autenticação
-- [ ] API backend para persistência
-- [ ] Assinatura digital
-- [ ] Envio por email
-- [ ] Dashboard de estatísticas
-
----
-
-⭐ Se este projeto te ajudou, considere dar uma estrela!
-
-**Desenvolvido com ❤️ usando Angular 18**
